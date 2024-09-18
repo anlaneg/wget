@@ -503,6 +503,7 @@ static void
 init_switches (void)
 {
   static bool initialized;
+  /*短选项*/
   char *p = short_options;
   size_t i, o = 0;
 
@@ -515,6 +516,7 @@ init_switches (void)
       struct cmdline_option *cmdopt = &option_data[i];
       struct option *longopt;
 
+      /*填充长选项*/
       longopt = &long_options[o++];
       longopt->name = cmdopt->long_name;
       longopt->val = i;
